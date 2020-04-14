@@ -125,7 +125,7 @@ while True:
         score = 0
 
         # Reset the delay
-        delay = 0.01
+        #delay = 0.01
 
         # Update the score 
         pen.clear()
@@ -150,7 +150,7 @@ while True:
         segments.append(new_segment)
 
         #shorten the delay
-        delay -= 0.002
+        #delay -= 0.001
 
         # Increase the score
         score += 10
@@ -195,7 +195,7 @@ while True:
             score = 0
 
             # Reset the delay
-            delay = 0.01
+            #delay = 0.01
 
             # Update the score
             pen.clear()
