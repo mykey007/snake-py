@@ -7,11 +7,16 @@ import random
 
 delay = 0.1
 
+# Score
+score = 0
+high_score = 0
+
+
 # Setup the screen
 
 wn = turtle.Screen()
 wn.title("Snake Game")
-wn.bgcolor("green")
+wn.bgcolor("maroon")
 wn.setup(width=600, height=600)
 # Prevent animation and turns off screen updates
 wn.tracer(0)
@@ -22,7 +27,7 @@ wn.tracer(0)
 food = turtle.Turtle()
 food.speed(0)
 food.shape("circle")
-food.color("blue")
+food.color("lime")
 # turtles draw lines, dont draw the line
 food.penup()
 food.goto(0,100)
@@ -32,8 +37,8 @@ food.goto(0,100)
 # Make snake head
 head = turtle.Turtle()
 head.speed(0)
-head.shape("square")
-head.color("orange")
+head.shape("turtle")
+head.color("aqua")
 # turtles draw lines, dont draw the line
 head.penup()
 head.goto(0,0)
@@ -43,6 +48,17 @@ head.direction = "stop"
 
 # Make snake body
 segments = []
+
+
+# Pen
+pen = turtle.Turtle()
+pen.speed(0)
+pen.shape("square")
+pen.color("white")
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write("Score: 0  High Score: 0", align="center", font=("Courier", 24, "normal"))
 
 
 # Functions
@@ -118,9 +134,18 @@ while True:
         new_segment = turtle.Turtle()
         new_segment.speed(0)
         new_segment.shape("square")
-        new_segment.color("coral")
+        new_segment.color("cyan")
         new_segment.penup()
         segments.append(new_segment)
+
+        # Increase the score
+        score += 10
+
+        if score > high_score:
+            high_score = score
+
+        pen.clear()
+        pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
 
 
     # Move the end segments first - reverse order
