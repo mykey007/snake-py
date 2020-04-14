@@ -120,6 +120,13 @@ while True:
 
         # Clear segments list
         segments.clear()
+
+        # Reset the score if it hits the border
+        score = 0
+
+        pen.clear()
+        pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
+
             
     
 
@@ -176,6 +183,13 @@ while True:
 
             # Clear segments list
             segments.clear()
+
+            # Reset the score if it hits the border
+            score = 0
+
+            pen.clear()
+            pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
+
 
     
     time.sleep(delay)
