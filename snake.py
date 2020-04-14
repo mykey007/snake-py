@@ -124,6 +124,10 @@ while True:
         # Reset the score if it hits the border
         score = 0
 
+        # Reset the delay
+        delay = 0.01
+
+        # Update the score 
         pen.clear()
         pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
 
@@ -144,6 +148,9 @@ while True:
         new_segment.color("cyan")
         new_segment.penup()
         segments.append(new_segment)
+
+        #shorten the delay
+        delay -= 0.002
 
         # Increase the score
         score += 10
@@ -187,6 +194,10 @@ while True:
             # Reset the score if it hits the border
             score = 0
 
+            # Reset the delay
+            delay = 0.01
+
+            # Update the score
             pen.clear()
             pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
 
